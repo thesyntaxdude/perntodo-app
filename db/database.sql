@@ -1,0 +1,5 @@
+CREATE DATABASE perntodo;
+
+CREATE TABLE todo(
+ todo_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+ description VARCHAR(255) NOT NULL CHECK(TRIM(description) <> ''));
