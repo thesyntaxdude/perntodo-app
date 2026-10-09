@@ -6,3 +6,11 @@ export const create = async (description) => {
     [description],
   );
 };
+
+export const listAll = async () => {
+  return await db.query("SELECT * FROM todo");
+};
+
+export const listOne = async (id) => {
+  return await db.query("SELECT * FROM todo WHERE todo_id = $1", [id]);
+};

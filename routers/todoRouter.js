@@ -1,8 +1,13 @@
 import express from "express";
-import { createTodo } from "../controllers/todoController.js";
+import {
+  createTodo,
+  listAllTodos,
+  listTodo,
+} from "../controllers/todoController.js";
 
 const router = express.Router();
 
-router.route("/").post(createTodo);
+router.route("/").post(createTodo).get(listAllTodos);
+router.route("/:id").get(listTodo);
 
 export default router;
